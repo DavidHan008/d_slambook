@@ -1,0 +1,1 @@
+/usr/bin/c++    -O0 -Wall -g -ggdb    -rdynamic CMakeFiles/d_use_ceres.dir/use_ceres.cpp.o  -o d_use_ceres /usr/local/ceres/lib/libceres.a -lumfpack -lcxsparse -lglog /usr/lib/x86_64-linux-gnu/libgflags.so.2.2.1 -lgomp -lccolamd -lbtf -lklu -lcholmod -llapack -lblas -lcamd -lamd -lpthread -lpthread 
