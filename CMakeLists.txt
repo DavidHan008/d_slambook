@@ -55,8 +55,7 @@ target_link_libraries( useHello hello_shared )
 add_executable(d_cv_loop cv_loop.cpp )
 target_link_libraries( d_cv_loop ${OpenCV_LIBS}  )
 
-add_executable(d_cv_pose_trans cv_pose_trans.cpp )
-target_link_libraries( d_cv_pose_trans ${OpenCV_LIBS}  )
+
 
 
 add_executable(d_joint_map joint_map.cpp )
@@ -77,3 +76,7 @@ frame.cpp
 
  )
 target_link_libraries( d_vo ${OpenCV_LIBS} ${catkin_LIBRARIES} ${Sophus_LIBRARIES})
+
+
+add_executable(d_cv_pose_trans cv_pose_trans.cpp )
+target_link_libraries( d_cv_pose_trans ${OpenCV_LIBS} ${Sophus_LIBRARIES} ${LIBS}  )

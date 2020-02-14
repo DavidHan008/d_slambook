@@ -87,6 +87,9 @@ d_cv_pose_trans: /usr/local/lib/libopencv_stitching.so.3.4.6
 d_cv_pose_trans: /usr/local/lib/libopencv_superres.so.3.4.6
 d_cv_pose_trans: /usr/local/lib/libopencv_videostab.so.3.4.6
 d_cv_pose_trans: /usr/local/lib/libopencv_viz.so.3.4.6
+d_cv_pose_trans: /home/davidhan/davidhan_project/slambook/3rdparty/Sophus/build/libSophus.so
+d_cv_pose_trans: /usr/local/ceres/lib/libceres.a
+d_cv_pose_trans: /usr/lib/x86_64-linux-gnu/libgflags.so.2.2.1
 d_cv_pose_trans: /usr/local/lib/libopencv_calib3d.so.3.4.6
 d_cv_pose_trans: /usr/local/lib/libopencv_features2d.so.3.4.6
 d_cv_pose_trans: /usr/local/lib/libopencv_flann.so.3.4.6

@@ -8,6 +8,61 @@
 #include <eigen3/Eigen/Core>
 #include<opencv2/core/eigen.hpp>//cv2eigen
 #include <eigen3/Eigen/Geometry>//四元数
+#include<sophus/se3.h>
+
+#include<ceres/ceres.h>
+#include <ceres/rotation.h>//用于将旋转矩阵进行旋转
+
+
+//使用ceres常见报错:https://blog.csdn.net/SLAM_masterFei/article/details/79550923
+
+
+void ceres_ba(const std::vector<cv::Point3d> pt3ds, const std::vector<cv::Point2d> pt2ds ,const cv::Mat &K, cv::Mat R, cv::Mat t );
+
+struct d_CostFunctor
+{
+  d_CostFunctor(cv::Point3d p_ref, cv::Point2d p_cur,cv::Mat K):p_ref_(p_ref),p_cur_(p_cur)
+  {  }
+ template <typename T>
+ bool operator()(const T* const R,const T* const t,T* residual)const{
+  //通过旋转向量恢复出旋转矩阵,然后将3d点转化到当前帧的相机坐标系下
+  T P_3d_in_ref[3]={T(p_ref_.x),T(p_ref_.y),T(p_ref_.z)};
+  T P_3d_in_curr[3];
+  ceres::AngleAxisRotatePoint(R,P_3d_in_ref,P_3d_in_curr);
+  P_3d_in_curr[0]+=t[0];
+  P_3d_in_curr[1]+=t[1];
+  P_3d_in_curr[2]+=t[2];
+
+    //  Eigen::AngleAxisd R_vector(0,rr_vec);
+    //  Eigen::Matrix3d R_Matrix;
+    //  R_Matrix=R_vector.toRotationMatrix();
+    //  Eigen::Vector3d t_trans(1,1,1);
+    //   //Eigen::Vector3d t_trans(t[0],t[1],t[2]);
+    //  Sophus::SE3 R_T_Matrix(R_Matrix,t_trans);
+    //  Eigen::Vector3d p_ref_in_ref_camera(p_ref_.x,p_ref_.y,p_ref_.z);
+    //  Eigen::Vector3d p_ref_in_cur_camera;
+    //  p_ref_in_cur_camera=R_T_Matrix*p_ref_in_ref_camera;
+    //     double cx=325.1;
+    // double cy=249.7;
+    // double fx=517.3;
+    // double fy=516.5;
+   T u_in_curr_camera,v_in_curr_camera;
+   u_in_curr_camera=T(517.3)*P_3d_in_curr[0]/P_3d_in_curr[2]+T(325.1);
+  // u_in_curr_camera=T(0);
+   v_in_curr_camera=T(516.5)*P_3d_in_curr[1]/P_3d_in_curr[2]+T(249.7);
+  //  v_in_curr_camera=T(0);
+   T u_curr=T(p_cur_.x);
+   T v_curr=T(p_cur_.y);
+    residual[0] = u_curr-u_in_curr_camera;
+    residual[1] = v_curr-v_in_curr_camera;
+    //也就是建立 之间的关系
+     return true;
+ }
+ const cv::Point3d p_ref_;
+ const cv::Point2d p_cur_;
+ const cv::Mat K_;
+ 
+};
 
 int main( int argc, char** argv )
 {
@@ -180,20 +235,16 @@ int main( int argc, char** argv )
       }
       std::cout<<"参考帧中的特征点:"<<d_pt3ds.size()<<std::endl;
       //std::cout<<"像素当中点:"<<d_pt2ds[1]<<std::endl  ;
-
-
-
       int test_pt_num=0;
       std::vector<cv::Point3d> pt12_3ds;
       std::vector<cv::Point2d> pt12_2ds;
       for(cv::DMatch m:good_match)
       {
         double pt12_depth=depth_img1.ptr<ushort>(int(kp1[m.queryIdx].pt.y))[int(kp1[m.queryIdx].pt.x)];
-        // if (pt12_depth==0) 
-        // {
-        //   std::cout<<"深度起0"<<std::endl;
-        //   continue;
-        // }
+        if (pt12_depth==0) 
+        {
+          continue;
+        }
         cv::Point3d pt12_match_dis;
         pt12_match_dis.x=(kp1[m.queryIdx].pt.x-cx)/fx*pt12_depth/depth_scale;//算出对应的像素坐标
         pt12_match_dis.y=(kp1[m.queryIdx].pt.y-cy)/fy*pt12_depth/depth_scale;
@@ -215,15 +266,24 @@ int main( int argc, char** argv )
       std::cout<<"K:"<<K_3d_2d<<std::endl;
       //cv::solvePnP(pt12_3ds,pt12_2ds,K_3d_2d,cv::Mat(),R_3d_2d,t_3d_2d,false);
       cv::Mat inliers;
-      std::cout<<"算法的输入"<<pt12_3ds<<std::endl;
+      //std::cout<<"算法的输入"<<pt12_3ds<<std::endl;
 
       cv::solvePnPRansac(pt12_3ds,pt12_2ds,K_3d_2d,cv::Mat(),R_3d_2d,t_3d_2d,false,100, 4.0, 0.99, inliers);//需要配置后面的参数,十分重要
       std::cout<<"内点的梳理"<<inliers.rows<<std::endl;
 
       cv::Mat result_3d_2d_R;
       cv::Rodrigues(R_3d_2d,result_3d_2d_R);
+
       std::cout<<"result_3d_2d_R:"<<result_3d_2d_R<<std::endl;
       std::cout<<"两张图片之间的平移量"<<t_3d_2d<<std::endl;
+
+      cv::Mat ceres_R,ceres_t;
+      ceres_t=t_3d_2d;
+      ceres_R=R_3d_2d;
+      ceres_ba(pt12_3ds,pt12_2ds,K_3d_2d,ceres_R,ceres_t);
+
+      
+
       //3d->2d只需要一张图片的3d信息就可以了
 
       //利用opencv 当中的solve pnp来求解这个问题,那么
@@ -239,3 +299,42 @@ int main( int argc, char** argv )
     
     return 0;
 }
+
+void ceres_ba(const std::vector<cv::Point3d> pt3ds, const std::vector<cv::Point2d> pt2ds ,const cv::Mat &K, cv::Mat R, cv::Mat t )
+{
+  std::cout<<"输入的原始向量R"<<R<<std::endl;//是一个三维的旋转向量
+  std::cout<<"输入的原始t"<<t<<std::endl;
+  double R_input[3]={R.at<double>(0,0),R.at<double>(0,1),R.at<double>(0,2)};
+  double t_input[3]={t.at<double>(0,0),t.at<double>(1,0),t.at<double>(2,0)};
+  std::cout<<R_input[2]<<std::endl;
+  std::cout<<t_input[2]<<std::endl;
+  ceres::Problem d_pro;
+  //对于每一个点都要优化
+  std::cout<<"需要优化的点的数量"<<pt3ds.size()<<std::endl;
+  for(int i=0;i<pt3ds.size();i++)
+  {
+    //输入的是一个u&v的位置
+    //第一个参数是优化变量的个数,例如u & v 第二个参数是输入数组的维度
+    //std::cout<<"第"<<i<<"个特征点"<<std::endl;
+    //std::cout<<"pt:3d"<<pt3ds[i]<<std::endl;
+    ceres::CostFunction *d_const_f=new ceres::AutoDiffCostFunction<d_CostFunctor,2,3,3>(new d_CostFunctor(pt3ds[i],pt2ds[i],K));
+    d_pro.AddResidualBlock(d_const_f,new ceres::CauchyLoss(0.5),R_input,t_input);
+  }
+    ceres::Solver::Options d_opt;
+    d_opt.linear_solver_type=ceres::DENSE_QR;
+    d_opt.minimizer_progress_to_stdout=true;
+    ceres::Solver::Summary sum;
+    std::cout<<"开始求解"<<std::endl;
+    ceres::Solve(d_opt,&d_pro,&sum); 
+    std::cout<<"求解出结果"<<std::endl;
+    std::cout << sum.BriefReport() << "\n";//输出优化的简要信息
+    R.at<double>(0,0)=R_input[0];
+        R.at<double>(0,1)=R_input[1];
+        R.at<double>(0,2)=R_input[2];
+      t.at<double>(0,0)=t_input[0];
+       t.at<double>(1,0)=t_input[1]; 
+      t.at<double>(2,0)=t_input[2];
+      std::cout<<"输出最小化重投影误差的结果"<<std::endl;
+    std::cout<<"输出的优化后的R"<<R<<std::endl;
+    std::cout<<"输出的优化后的t"<<t<<std::endl;
+ }

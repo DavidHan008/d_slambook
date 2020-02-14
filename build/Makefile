@@ -168,6 +168,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named d_cv_pose_trans
+
+# Build rule for target.
+d_cv_pose_trans: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 d_cv_pose_trans
+.PHONY : d_cv_pose_trans
+
+# fast build rule for target.
+d_cv_pose_trans/fast:
+	$(MAKE) -f CMakeFiles/d_cv_pose_trans.dir/build.make CMakeFiles/d_cv_pose_trans.dir/build
+.PHONY : d_cv_pose_trans/fast
+
+#=============================================================================
 # Target rules for targets named d_vo
 
 # Build rule for target.
@@ -192,19 +205,6 @@ d_use_ceres: cmake_check_build_system
 d_use_ceres/fast:
 	$(MAKE) -f CMakeFiles/d_use_ceres.dir/build.make CMakeFiles/d_use_ceres.dir/build
 .PHONY : d_use_ceres/fast
-
-#=============================================================================
-# Target rules for targets named d_cv_pose_trans
-
-# Build rule for target.
-d_cv_pose_trans: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 d_cv_pose_trans
-.PHONY : d_cv_pose_trans
-
-# fast build rule for target.
-d_cv_pose_trans/fast:
-	$(MAKE) -f CMakeFiles/d_cv_pose_trans.dir/build.make CMakeFiles/d_cv_pose_trans.dir/build
-.PHONY : d_cv_pose_trans/fast
 
 #=============================================================================
 # Target rules for targets named d_cv_loop
@@ -1295,9 +1295,9 @@ help:
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... edit_cache"
+	@echo "... d_cv_pose_trans"
 	@echo "... d_vo"
 	@echo "... d_use_ceres"
-	@echo "... d_cv_pose_trans"
 	@echo "... d_cv_loop"
 	@echo "... useHello"
 	@echo "... tf2_msgs_generate_messages_nodejs"
