@@ -1,4 +1,39 @@
 #include"visual_odometry.h"
+
+
+struct d_CostFunctor
+{
+  d_CostFunctor(cv::Point3d p_ref, cv::Point2d p_cur,cv::Mat K):p_ref_(p_ref),p_cur_(p_cur)
+  {  }
+ template <typename T>
+ bool operator()(const T* const R,const T* const t,T* residual)const{
+  //通过旋转向量恢复出旋转矩阵,然后将3d点转化到当前帧的相机坐标系下
+  T P_3d_in_ref[3]={T(p_ref_.x),T(p_ref_.y),T(p_ref_.z)};
+  T P_3d_in_curr[3];
+  ceres::AngleAxisRotatePoint(R,P_3d_in_ref,P_3d_in_curr);
+  P_3d_in_curr[0]+=t[0];
+  P_3d_in_curr[1]+=t[1];
+  P_3d_in_curr[2]+=t[2];
+   T u_in_curr_camera,v_in_curr_camera;
+   u_in_curr_camera=T(517.3)*P_3d_in_curr[0]/P_3d_in_curr[2]+T(325.1);
+  // u_in_curr_camera=T(0);
+   v_in_curr_camera=T(516.5)*P_3d_in_curr[1]/P_3d_in_curr[2]+T(249.7);
+  //  v_in_curr_camera=T(0);
+   T u_curr=T(p_cur_.x);
+   T v_curr=T(p_cur_.y);
+    residual[0] = u_curr-u_in_curr_camera;
+    residual[1] = v_curr-v_in_curr_camera;
+    //也就是建立 之间的关系
+     return true;
+ }
+ const cv::Point3d p_ref_;
+ const cv::Point2d p_cur_;
+ const cv::Mat K_;
+};
+
+void ceres_ba(const std::vector<cv::Point3d> pt3ds, const std::vector<cv::Point2d> pt2ds ,const cv::Mat &K, cv::Mat R, cv::Mat t );
+
+
 namespace myslam
 {
     bool matIsEqual(const cv::Mat mat1, const cv::Mat mat2) {
@@ -176,6 +211,8 @@ namespace myslam
 
 
                 //求解出相机的姿态
+                //然后通过ceresba进行呢优化
+                ceres_ba(pt_curr_in_cameras_in_good_match,pt_curr_in_pixels_in_good_match,K_3d_2d,R_curr2ref_temp,t_curr2ref);
                 //之后对相机的姿态进行累加
                 T_c_r_estimated_= SE3(Sophus::SO3(R_curr2ref_temp.at<double>(0,0),R_curr2ref_temp.at<double>(1,0),R_curr2ref_temp.at<double>(2,0))
                ,Eigen::Vector3d(t_curr2ref.at<double>(0,0),t_curr2ref.at<double>(1,0),t_curr2ref.at<double>(2,0)));
@@ -220,5 +257,54 @@ namespace myslam
             break;
         }
         return true;
+    
     }   
+
+   
+
+
 };
+
+
+
+
+
+ void ceres_ba(const std::vector<cv::Point3d> pt3ds, const std::vector<cv::Point2d> pt2ds ,const cv::Mat &K, cv::Mat R, cv::Mat t )
+{
+  std::cout<<"输入的原始向量R"<<R<<std::endl;//是一个三维的旋转向量
+  std::cout<<"输入的原始t"<<t<<std::endl;
+  double R_input[3]={R.at<double>(0,0),R.at<double>(0,1),R.at<double>(0,2)};
+  double t_input[3]={t.at<double>(0,0),t.at<double>(1,0),t.at<double>(2,0)};
+  std::cout<<R_input[2]<<std::endl;
+  std::cout<<t_input[2]<<std::endl;
+  ceres::Problem d_pro;
+  //对于每一个点都要优化
+  std::cout<<"需要优化的点的数量"<<pt3ds.size()<<std::endl;
+  for(int i=0;i<pt3ds.size();i++)
+  {
+    //输入的是一个u&v的位置
+    //第一个参数是优化变量的个数,例如u & v 第二个参数是输入数组的维度
+    //std::cout<<"第"<<i<<"个特征点"<<std::endl;
+    //std::cout<<"pt:3d"<<pt3ds[i]<<std::endl;
+    ceres::CostFunction *d_const_f=new ceres::AutoDiffCostFunction<d_CostFunctor,2,3,3>(new d_CostFunctor(pt3ds[i],pt2ds[i],K));
+    d_pro.AddResidualBlock(d_const_f,new ceres::CauchyLoss(0.5),R_input,t_input);
+  }
+    ceres::Solver::Options d_opt;
+    d_opt.linear_solver_type=ceres::DENSE_QR;
+    d_opt.minimizer_progress_to_stdout=true;
+    ceres::Solver::Summary sum;
+    std::cout<<"开始求解"<<std::endl;
+    ceres::Solve(d_opt,&d_pro,&sum); 
+    std::cout<<"求解出结果"<<std::endl;
+    std::cout << sum.BriefReport() << "\n";//输出优化的简要信息
+    R.at<double>(0,0)=R_input[0];
+        R.at<double>(0,1)=R_input[1];
+        R.at<double>(0,2)=R_input[2];
+      t.at<double>(0,0)=t_input[0];
+       t.at<double>(1,0)=t_input[1]; 
+      t.at<double>(2,0)=t_input[2];
+      std::cout<<"输出最小化重投影误差的结果"<<std::endl;
+    std::cout<<"输出的优化后的R"<<R<<std::endl;
+    std::cout<<"输出的优化后的t"<<t<<std::endl;
+ }
+

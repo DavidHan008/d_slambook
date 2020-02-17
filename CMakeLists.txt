@@ -69,14 +69,20 @@ target_link_libraries( d_use_ceres ${LIBS}  )
 
 add_executable(d_vo d_vo_main.cpp
                     camera.cpp
-visual_odometry.cpp
-frame.cpp
+                    visual_odometry.cpp
+                    frame.cpp
 
 
 
  )
-target_link_libraries( d_vo ${OpenCV_LIBS} ${catkin_LIBRARIES} ${Sophus_LIBRARIES})
+target_link_libraries( d_vo ${OpenCV_LIBS} ${catkin_LIBRARIES} ${Sophus_LIBRARIES} ${LIBS})
 
 
 add_executable(d_cv_pose_trans cv_pose_trans.cpp )
 target_link_libraries( d_cv_pose_trans ${OpenCV_LIBS} ${Sophus_LIBRARIES} ${LIBS}  )
+
+add_executable(d_ceres_map ceres_map.cpp )
+target_link_libraries( d_ceres_map ${OpenCV_LIBS} ${Sophus_LIBRARIES} ${LIBS}  )
+
+add_executable(d_lk_dirtect lk_dirtect.cpp )
+target_link_libraries( d_lk_dirtect ${OpenCV_LIBS} ${Sophus_LIBRARIES} ${LIBS}  )

@@ -61,7 +61,6 @@ struct d_CostFunctor
  const cv::Point3d p_ref_;
  const cv::Point2d p_cur_;
  const cv::Mat K_;
- 
 };
 
 int main( int argc, char** argv )

@@ -157,6 +157,8 @@ d_vo: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
 d_vo: /usr/lib/x86_64-linux-gnu/libpthread.so
 d_vo: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
 d_vo: /home/davidhan/davidhan_project/slambook/3rdparty/Sophus/build/libSophus.so
+d_vo: /usr/local/ceres/lib/libceres.a
+d_vo: /usr/lib/x86_64-linux-gnu/libgflags.so.2.2.1
 d_vo: /usr/local/lib/libopencv_calib3d.so.3.4.6
 d_vo: /usr/local/lib/libopencv_features2d.so.3.4.6
 d_vo: /usr/local/lib/libopencv_flann.so.3.4.6

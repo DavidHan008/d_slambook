@@ -168,6 +168,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named d_lk_dirtect
+
+# Build rule for target.
+d_lk_dirtect: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 d_lk_dirtect
+.PHONY : d_lk_dirtect
+
+# fast build rule for target.
+d_lk_dirtect/fast:
+	$(MAKE) -f CMakeFiles/d_lk_dirtect.dir/build.make CMakeFiles/d_lk_dirtect.dir/build
+.PHONY : d_lk_dirtect/fast
+
+#=============================================================================
+# Target rules for targets named d_ceres_map
+
+# Build rule for target.
+d_ceres_map: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 d_ceres_map
+.PHONY : d_ceres_map
+
+# fast build rule for target.
+d_ceres_map/fast:
+	$(MAKE) -f CMakeFiles/d_ceres_map.dir/build.make CMakeFiles/d_ceres_map.dir/build
+.PHONY : d_ceres_map/fast
+
+#=============================================================================
 # Target rules for targets named d_cv_pose_trans
 
 # Build rule for target.
@@ -1013,6 +1039,33 @@ camera.cpp.s:
 	$(MAKE) -f CMakeFiles/d_vo.dir/build.make CMakeFiles/d_vo.dir/camera.cpp.s
 .PHONY : camera.cpp.s
 
+ceres_map.o: ceres_map.cpp.o
+
+.PHONY : ceres_map.o
+
+# target to build an object file
+ceres_map.cpp.o:
+	$(MAKE) -f CMakeFiles/d_ceres_map.dir/build.make CMakeFiles/d_ceres_map.dir/ceres_map.cpp.o
+.PHONY : ceres_map.cpp.o
+
+ceres_map.i: ceres_map.cpp.i
+
+.PHONY : ceres_map.i
+
+# target to preprocess a source file
+ceres_map.cpp.i:
+	$(MAKE) -f CMakeFiles/d_ceres_map.dir/build.make CMakeFiles/d_ceres_map.dir/ceres_map.cpp.i
+.PHONY : ceres_map.cpp.i
+
+ceres_map.s: ceres_map.cpp.s
+
+.PHONY : ceres_map.s
+
+# target to generate assembly for a file
+ceres_map.cpp.s:
+	$(MAKE) -f CMakeFiles/d_ceres_map.dir/build.make CMakeFiles/d_ceres_map.dir/ceres_map.cpp.s
+.PHONY : ceres_map.cpp.s
+
 cv_loop.o: cv_loop.cpp.o
 
 .PHONY : cv_loop.o
@@ -1205,6 +1258,33 @@ libHelloSLAM.cpp.s:
 	$(MAKE) -f CMakeFiles/hello_shared.dir/build.make CMakeFiles/hello_shared.dir/libHelloSLAM.cpp.s
 .PHONY : libHelloSLAM.cpp.s
 
+lk_dirtect.o: lk_dirtect.cpp.o
+
+.PHONY : lk_dirtect.o
+
+# target to build an object file
+lk_dirtect.cpp.o:
+	$(MAKE) -f CMakeFiles/d_lk_dirtect.dir/build.make CMakeFiles/d_lk_dirtect.dir/lk_dirtect.cpp.o
+.PHONY : lk_dirtect.cpp.o
+
+lk_dirtect.i: lk_dirtect.cpp.i
+
+.PHONY : lk_dirtect.i
+
+# target to preprocess a source file
+lk_dirtect.cpp.i:
+	$(MAKE) -f CMakeFiles/d_lk_dirtect.dir/build.make CMakeFiles/d_lk_dirtect.dir/lk_dirtect.cpp.i
+.PHONY : lk_dirtect.cpp.i
+
+lk_dirtect.s: lk_dirtect.cpp.s
+
+.PHONY : lk_dirtect.s
+
+# target to generate assembly for a file
+lk_dirtect.cpp.s:
+	$(MAKE) -f CMakeFiles/d_lk_dirtect.dir/build.make CMakeFiles/d_lk_dirtect.dir/lk_dirtect.cpp.s
+.PHONY : lk_dirtect.cpp.s
+
 useHello.o: useHello.cpp.o
 
 .PHONY : useHello.o
@@ -1295,6 +1375,8 @@ help:
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... edit_cache"
+	@echo "... d_lk_dirtect"
+	@echo "... d_ceres_map"
 	@echo "... d_cv_pose_trans"
 	@echo "... d_vo"
 	@echo "... d_use_ceres"
@@ -1365,6 +1447,9 @@ help:
 	@echo "... camera.o"
 	@echo "... camera.i"
 	@echo "... camera.s"
+	@echo "... ceres_map.o"
+	@echo "... ceres_map.i"
+	@echo "... ceres_map.s"
 	@echo "... cv_loop.o"
 	@echo "... cv_loop.i"
 	@echo "... cv_loop.s"
@@ -1386,6 +1471,9 @@ help:
 	@echo "... libHelloSLAM.o"
 	@echo "... libHelloSLAM.i"
 	@echo "... libHelloSLAM.s"
+	@echo "... lk_dirtect.o"
+	@echo "... lk_dirtect.i"
+	@echo "... lk_dirtect.s"
 	@echo "... useHello.o"
 	@echo "... useHello.i"
 	@echo "... useHello.s"
