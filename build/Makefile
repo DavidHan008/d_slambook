@@ -181,6 +181,19 @@ d_lk_dirtect/fast:
 .PHONY : d_lk_dirtect/fast
 
 #=============================================================================
+# Target rules for targets named d_slam
+
+# Build rule for target.
+d_slam: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 d_slam
+.PHONY : d_slam
+
+# fast build rule for target.
+d_slam/fast:
+	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/build
+.PHONY : d_slam/fast
+
+#=============================================================================
 # Target rules for targets named d_ceres_map
 
 # Build rule for target.
@@ -960,58 +973,6 @@ sensor_msgs_generate_messages_nodejs/fast:
 	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
 .PHONY : sensor_msgs_generate_messages_nodejs/fast
 
-#=============================================================================
-# Target rules for targets named gmock_main
-
-# Build rule for target.
-gmock_main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gmock_main
-.PHONY : gmock_main
-
-# fast build rule for target.
-gmock_main/fast:
-	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/build
-.PHONY : gmock_main/fast
-
-#=============================================================================
-# Target rules for targets named gmock
-
-# Build rule for target.
-gmock: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gmock
-.PHONY : gmock
-
-# fast build rule for target.
-gmock/fast:
-	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock.dir/build.make gtest/googlemock/CMakeFiles/gmock.dir/build
-.PHONY : gmock/fast
-
-#=============================================================================
-# Target rules for targets named gtest_main
-
-# Build rule for target.
-gtest_main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gtest_main
-.PHONY : gtest_main
-
-# fast build rule for target.
-gtest_main/fast:
-	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/build
-.PHONY : gtest_main/fast
-
-#=============================================================================
-# Target rules for targets named gtest
-
-# Build rule for target.
-gtest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gtest
-.PHONY : gtest
-
-# fast build rule for target.
-gtest/fast:
-	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest.dir/build
-.PHONY : gtest/fast
-
 camera.o: camera.cpp.o
 
 .PHONY : camera.o
@@ -1038,6 +999,33 @@ camera.s: camera.cpp.s
 camera.cpp.s:
 	$(MAKE) -f CMakeFiles/d_vo.dir/build.make CMakeFiles/d_vo.dir/camera.cpp.s
 .PHONY : camera.cpp.s
+
+camera2.o: camera2.cpp.o
+
+.PHONY : camera2.o
+
+# target to build an object file
+camera2.cpp.o:
+	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/camera2.cpp.o
+.PHONY : camera2.cpp.o
+
+camera2.i: camera2.cpp.i
+
+.PHONY : camera2.i
+
+# target to preprocess a source file
+camera2.cpp.i:
+	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/camera2.cpp.i
+.PHONY : camera2.cpp.i
+
+camera2.s: camera2.cpp.s
+
+.PHONY : camera2.s
+
+# target to generate assembly for a file
+camera2.cpp.s:
+	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/camera2.cpp.s
+.PHONY : camera2.cpp.s
 
 ceres_map.o: ceres_map.cpp.o
 
@@ -1120,6 +1108,33 @@ cv_pose_trans.cpp.s:
 	$(MAKE) -f CMakeFiles/d_cv_pose_trans.dir/build.make CMakeFiles/d_cv_pose_trans.dir/cv_pose_trans.cpp.s
 .PHONY : cv_pose_trans.cpp.s
 
+d_slam_main.o: d_slam_main.cpp.o
+
+.PHONY : d_slam_main.o
+
+# target to build an object file
+d_slam_main.cpp.o:
+	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/d_slam_main.cpp.o
+.PHONY : d_slam_main.cpp.o
+
+d_slam_main.i: d_slam_main.cpp.i
+
+.PHONY : d_slam_main.i
+
+# target to preprocess a source file
+d_slam_main.cpp.i:
+	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/d_slam_main.cpp.i
+.PHONY : d_slam_main.cpp.i
+
+d_slam_main.s: d_slam_main.cpp.s
+
+.PHONY : d_slam_main.s
+
+# target to generate assembly for a file
+d_slam_main.cpp.s:
+	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/d_slam_main.cpp.s
+.PHONY : d_slam_main.cpp.s
+
 d_vo_main.o: d_vo_main.cpp.o
 
 .PHONY : d_vo_main.o
@@ -1147,6 +1162,33 @@ d_vo_main.cpp.s:
 	$(MAKE) -f CMakeFiles/d_vo.dir/build.make CMakeFiles/d_vo.dir/d_vo_main.cpp.s
 .PHONY : d_vo_main.cpp.s
 
+dataset2.o: dataset2.cpp.o
+
+.PHONY : dataset2.o
+
+# target to build an object file
+dataset2.cpp.o:
+	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/dataset2.cpp.o
+.PHONY : dataset2.cpp.o
+
+dataset2.i: dataset2.cpp.i
+
+.PHONY : dataset2.i
+
+# target to preprocess a source file
+dataset2.cpp.i:
+	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/dataset2.cpp.i
+.PHONY : dataset2.cpp.i
+
+dataset2.s: dataset2.cpp.s
+
+.PHONY : dataset2.s
+
+# target to generate assembly for a file
+dataset2.cpp.s:
+	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/dataset2.cpp.s
+.PHONY : dataset2.cpp.s
+
 frame.o: frame.cpp.o
 
 .PHONY : frame.o
@@ -1173,6 +1215,33 @@ frame.s: frame.cpp.s
 frame.cpp.s:
 	$(MAKE) -f CMakeFiles/d_vo.dir/build.make CMakeFiles/d_vo.dir/frame.cpp.s
 .PHONY : frame.cpp.s
+
+frame2.o: frame2.cpp.o
+
+.PHONY : frame2.o
+
+# target to build an object file
+frame2.cpp.o:
+	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/frame2.cpp.o
+.PHONY : frame2.cpp.o
+
+frame2.i: frame2.cpp.i
+
+.PHONY : frame2.i
+
+# target to preprocess a source file
+frame2.cpp.i:
+	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/frame2.cpp.i
+.PHONY : frame2.cpp.i
+
+frame2.s: frame2.cpp.s
+
+.PHONY : frame2.s
+
+# target to generate assembly for a file
+frame2.cpp.s:
+	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/frame2.cpp.s
+.PHONY : frame2.cpp.s
 
 helloSLAM.o: helloSLAM.cpp.o
 
@@ -1366,6 +1435,33 @@ visual_odometry.cpp.s:
 	$(MAKE) -f CMakeFiles/d_vo.dir/build.make CMakeFiles/d_vo.dir/visual_odometry.cpp.s
 .PHONY : visual_odometry.cpp.s
 
+visual_odometry2.o: visual_odometry2.cpp.o
+
+.PHONY : visual_odometry2.o
+
+# target to build an object file
+visual_odometry2.cpp.o:
+	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/visual_odometry2.cpp.o
+.PHONY : visual_odometry2.cpp.o
+
+visual_odometry2.i: visual_odometry2.cpp.i
+
+.PHONY : visual_odometry2.i
+
+# target to preprocess a source file
+visual_odometry2.cpp.i:
+	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/visual_odometry2.cpp.i
+.PHONY : visual_odometry2.cpp.i
+
+visual_odometry2.s: visual_odometry2.cpp.s
+
+.PHONY : visual_odometry2.s
+
+# target to generate assembly for a file
+visual_odometry2.cpp.s:
+	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/visual_odometry2.cpp.s
+.PHONY : visual_odometry2.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1376,6 +1472,7 @@ help:
 	@echo "... list_install_components"
 	@echo "... edit_cache"
 	@echo "... d_lk_dirtect"
+	@echo "... d_slam"
 	@echo "... d_ceres_map"
 	@echo "... d_cv_pose_trans"
 	@echo "... d_vo"
@@ -1440,13 +1537,12 @@ help:
 	@echo "... actionlib_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_nodejs"
-	@echo "... gmock_main"
-	@echo "... gmock"
-	@echo "... gtest_main"
-	@echo "... gtest"
 	@echo "... camera.o"
 	@echo "... camera.i"
 	@echo "... camera.s"
+	@echo "... camera2.o"
+	@echo "... camera2.i"
+	@echo "... camera2.s"
 	@echo "... ceres_map.o"
 	@echo "... ceres_map.i"
 	@echo "... ceres_map.s"
@@ -1456,12 +1552,21 @@ help:
 	@echo "... cv_pose_trans.o"
 	@echo "... cv_pose_trans.i"
 	@echo "... cv_pose_trans.s"
+	@echo "... d_slam_main.o"
+	@echo "... d_slam_main.i"
+	@echo "... d_slam_main.s"
 	@echo "... d_vo_main.o"
 	@echo "... d_vo_main.i"
 	@echo "... d_vo_main.s"
+	@echo "... dataset2.o"
+	@echo "... dataset2.i"
+	@echo "... dataset2.s"
 	@echo "... frame.o"
 	@echo "... frame.i"
 	@echo "... frame.s"
+	@echo "... frame2.o"
+	@echo "... frame2.i"
+	@echo "... frame2.s"
 	@echo "... helloSLAM.o"
 	@echo "... helloSLAM.i"
 	@echo "... helloSLAM.s"
@@ -1483,6 +1588,9 @@ help:
 	@echo "... visual_odometry.o"
 	@echo "... visual_odometry.i"
 	@echo "... visual_odometry.s"
+	@echo "... visual_odometry2.o"
+	@echo "... visual_odometry2.i"
+	@echo "... visual_odometry2.s"
 .PHONY : help
 
 

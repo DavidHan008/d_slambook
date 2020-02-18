@@ -381,14 +381,14 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/local/ceres/lib/cmake/Ceres/FindEigen.cmake"
   "/usr/local/ceres/lib/cmake/Ceres/FindGflags.cmake"
   "/usr/local/ceres/lib/cmake/Ceres/FindGlog.cmake"
+  "/usr/local/lib/cmake/Pangolin/PangolinConfig.cmake"
+  "/usr/local/lib/cmake/Pangolin/PangolinConfigVersion.cmake"
+  "/usr/local/lib/cmake/Pangolin/PangolinTargets-release.cmake"
+  "/usr/local/lib/cmake/Pangolin/PangolinTargets.cmake"
   "/usr/local/share/OpenCV/OpenCVConfig-version.cmake"
   "/usr/local/share/OpenCV/OpenCVConfig.cmake"
   "/usr/local/share/OpenCV/OpenCVModules-release.cmake"
   "/usr/local/share/OpenCV/OpenCVModules.cmake"
-  "/usr/src/googletest/CMakeLists.txt"
-  "/usr/src/googletest/googlemock/CMakeLists.txt"
-  "/usr/src/googletest/googletest/CMakeLists.txt"
-  "/usr/src/googletest/googletest/cmake/internal_utils.cmake"
   )
 
 # The corresponding makefile is:
@@ -411,14 +411,12 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "catkin_generated/env_cached.sh"
   "catkin_generated/stamps/HelloSLAM/interrogate_setup_dot_py.py.stamp"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
-  "gtest/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "gtest/googlemock/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "gtest/googlemock/gtest/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/d_lk_dirtect.dir/DependInfo.cmake"
+  "CMakeFiles/d_slam.dir/DependInfo.cmake"
   "CMakeFiles/d_ceres_map.dir/DependInfo.cmake"
   "CMakeFiles/d_cv_pose_trans.dir/DependInfo.cmake"
   "CMakeFiles/d_vo.dir/DependInfo.cmake"
@@ -479,8 +477,4 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/actionlib_generate_messages_cpp.dir/DependInfo.cmake"
   "CMakeFiles/roscpp_generate_messages_cpp.dir/DependInfo.cmake"
   "CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/DependInfo.cmake"
-  "gtest/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake"
-  "gtest/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake"
-  "gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
-  "gtest/googlemock/gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
   )

@@ -51,6 +51,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/include/ni"
   "/usr/include/openni2"
   "/home/davidhan/davidhan_project/slambook/3rdparty/Sophus"
+  "/usr/local/lib/cmake/Pangolin/../../../include"
   "/usr/local/ceres/include"
   "/opt/ros/melodic/include"
   "/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"

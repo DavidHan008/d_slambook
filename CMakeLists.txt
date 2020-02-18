@@ -15,6 +15,8 @@ add_definitions( ${PCL_DEFINITIONS} )
 
 find_package( Sophus REQUIRED )
 include_directories( ${Sophus_INCLUDE_DIRS} )
+find_package( Pangolin )
+include_directories( ${Pangolin_INCLUDE_DIRS} )
 
 
 
@@ -86,3 +88,14 @@ target_link_libraries( d_ceres_map ${OpenCV_LIBS} ${Sophus_LIBRARIES} ${LIBS}  )
 
 add_executable(d_lk_dirtect lk_dirtect.cpp )
 target_link_libraries( d_lk_dirtect ${OpenCV_LIBS} ${Sophus_LIBRARIES} ${LIBS}  )
+
+
+add_executable(d_slam 
+                    camera2.cpp
+                    d_slam_main.cpp
+                    frame2.cpp
+                    dataset2.cpp
+                    visual_odometry2.cpp
+
+ )
+target_link_libraries( d_slam ${OpenCV_LIBS} ${catkin_LIBRARIES} ${Sophus_LIBRARIES} ${LIBS} ${Pangolin_LIBRARIES} )

@@ -343,13 +343,13 @@ GMock_DIR:PATH=GMock_DIR-NOTFOUND
 GTEST_INCLUDE_DIR:PATH=/usr/include
 
 //Path to a library.
-GTEST_LIBRARY:FILEPATH=GTEST_LIBRARY-NOTFOUND
+GTEST_LIBRARY:FILEPATH=/usr/local/lib/libgtest.a
 
 //Path to a library.
 GTEST_LIBRARY_DEBUG:FILEPATH=GTEST_LIBRARY_DEBUG-NOTFOUND
 
 //Path to a library.
-GTEST_MAIN_LIBRARY:FILEPATH=GTEST_MAIN_LIBRARY-NOTFOUND
+GTEST_MAIN_LIBRARY:FILEPATH=/usr/local/lib/libgtest_main.a
 
 //Path to a library.
 GTEST_MAIN_LIBRARY_DEBUG:FILEPATH=GTEST_MAIN_LIBRARY_DEBUG-NOTFOUND
@@ -437,6 +437,9 @@ PYTHON_EXECUTABLE:FILEPATH=/usr/bin/python2
 
 //Specify specific Python version to use ('major.minor' or 'major')
 PYTHON_VERSION:STRING=2
+
+//The directory containing a CMake configuration file for Pangolin.
+Pangolin_DIR:PATH=/usr/local/lib/cmake/Pangolin
 
 //The directory containing a CMake configuration file for Qt5Core.
 Qt5Core_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Core
@@ -787,7 +790,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -849,7 +852,7 @@ FIND_PACKAGE_MESSAGE_DETAILS_PCL_IO:INTERNAL=[/usr/lib/x86_64-linux-gnu/libpcl_i
 //Details about finding PCL_OCTREE
 FIND_PACKAGE_MESSAGE_DETAILS_PCL_OCTREE:INTERNAL=[/usr/lib/x86_64-linux-gnu/libpcl_octree.so][/usr/include/pcl-1.8][v()]
 //Details about finding PythonInterp
-FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python2][v2.7.15()]
+FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python2][v2.7.15(2)]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //Details about finding eigen
@@ -867,6 +870,8 @@ GMOCK_FROM_SOURCE_INCLUDE_DIRS:INTERNAL=/usr/include
 GMOCK_FROM_SOURCE_LIBRARIES:INTERNAL=gmock
 GMOCK_FROM_SOURCE_LIBRARY_DIRS:INTERNAL=/home/davidhan/davidhan_project/d_slambook/build/gmock
 GMOCK_FROM_SOURCE_MAIN_LIBRARIES:INTERNAL=gmock_main
+GTEST_BOTH_LIBRARIES:INTERNAL=/usr/local/lib/libgtest.a;/usr/local/lib/libgtest_main.a
+GTEST_FOUND:INTERNAL=TRUE
 GTEST_FROM_SOURCE_FOUND:INTERNAL=TRUE
 GTEST_FROM_SOURCE_INCLUDE_DIRS:INTERNAL=/usr/include
 GTEST_FROM_SOURCE_LIBRARIES:INTERNAL=gtest
@@ -874,10 +879,13 @@ GTEST_FROM_SOURCE_LIBRARY_DIRS:INTERNAL=/home/davidhan/davidhan_project/d_slambo
 GTEST_FROM_SOURCE_MAIN_LIBRARIES:INTERNAL=gtest_main
 //ADVANCED property for variable: GTEST_INCLUDE_DIR
 GTEST_INCLUDE_DIR-ADVANCED:INTERNAL=1
+GTEST_INCLUDE_DIRS:INTERNAL=/usr/include
+GTEST_LIBRARIES:INTERNAL=/usr/local/lib/libgtest.a
 //ADVANCED property for variable: GTEST_LIBRARY
 GTEST_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: GTEST_LIBRARY_DEBUG
 GTEST_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+GTEST_MAIN_LIBRARIES:INTERNAL=/usr/local/lib/libgtest_main.a
 //ADVANCED property for variable: GTEST_MAIN_LIBRARY
 GTEST_MAIN_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: GTEST_MAIN_LIBRARY_DEBUG
