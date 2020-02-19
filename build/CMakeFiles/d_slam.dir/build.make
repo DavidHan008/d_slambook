@@ -122,13 +122,55 @@ CMakeFiles/d_slam.dir/visual_odometry2.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/d_slam.dir/visual_odometry2.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/davidhan/davidhan_project/d_slambook/visual_odometry2.cpp -o CMakeFiles/d_slam.dir/visual_odometry2.cpp.s
 
+CMakeFiles/d_slam.dir/map2.cpp.o: CMakeFiles/d_slam.dir/flags.make
+CMakeFiles/d_slam.dir/map2.cpp.o: ../map2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/davidhan/davidhan_project/d_slambook/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/d_slam.dir/map2.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/d_slam.dir/map2.cpp.o -c /home/davidhan/davidhan_project/d_slambook/map2.cpp
+
+CMakeFiles/d_slam.dir/map2.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/d_slam.dir/map2.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/davidhan/davidhan_project/d_slambook/map2.cpp > CMakeFiles/d_slam.dir/map2.cpp.i
+
+CMakeFiles/d_slam.dir/map2.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/d_slam.dir/map2.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/davidhan/davidhan_project/d_slambook/map2.cpp -o CMakeFiles/d_slam.dir/map2.cpp.s
+
+CMakeFiles/d_slam.dir/frontend2.cpp.o: CMakeFiles/d_slam.dir/flags.make
+CMakeFiles/d_slam.dir/frontend2.cpp.o: ../frontend2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/davidhan/davidhan_project/d_slambook/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/d_slam.dir/frontend2.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/d_slam.dir/frontend2.cpp.o -c /home/davidhan/davidhan_project/d_slambook/frontend2.cpp
+
+CMakeFiles/d_slam.dir/frontend2.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/d_slam.dir/frontend2.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/davidhan/davidhan_project/d_slambook/frontend2.cpp > CMakeFiles/d_slam.dir/frontend2.cpp.i
+
+CMakeFiles/d_slam.dir/frontend2.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/d_slam.dir/frontend2.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/davidhan/davidhan_project/d_slambook/frontend2.cpp -o CMakeFiles/d_slam.dir/frontend2.cpp.s
+
+CMakeFiles/d_slam.dir/backend2.cpp.o: CMakeFiles/d_slam.dir/flags.make
+CMakeFiles/d_slam.dir/backend2.cpp.o: ../backend2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/davidhan/davidhan_project/d_slambook/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/d_slam.dir/backend2.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/d_slam.dir/backend2.cpp.o -c /home/davidhan/davidhan_project/d_slambook/backend2.cpp
+
+CMakeFiles/d_slam.dir/backend2.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/d_slam.dir/backend2.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/davidhan/davidhan_project/d_slambook/backend2.cpp > CMakeFiles/d_slam.dir/backend2.cpp.i
+
+CMakeFiles/d_slam.dir/backend2.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/d_slam.dir/backend2.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/davidhan/davidhan_project/d_slambook/backend2.cpp -o CMakeFiles/d_slam.dir/backend2.cpp.s
+
 # Object files for target d_slam
 d_slam_OBJECTS = \
 "CMakeFiles/d_slam.dir/camera2.cpp.o" \
 "CMakeFiles/d_slam.dir/d_slam_main.cpp.o" \
 "CMakeFiles/d_slam.dir/frame2.cpp.o" \
 "CMakeFiles/d_slam.dir/dataset2.cpp.o" \
-"CMakeFiles/d_slam.dir/visual_odometry2.cpp.o"
+"CMakeFiles/d_slam.dir/visual_odometry2.cpp.o" \
+"CMakeFiles/d_slam.dir/map2.cpp.o" \
+"CMakeFiles/d_slam.dir/frontend2.cpp.o" \
+"CMakeFiles/d_slam.dir/backend2.cpp.o"
 
 # External object files for target d_slam
 d_slam_EXTERNAL_OBJECTS =
@@ -138,6 +180,9 @@ d_slam: CMakeFiles/d_slam.dir/d_slam_main.cpp.o
 d_slam: CMakeFiles/d_slam.dir/frame2.cpp.o
 d_slam: CMakeFiles/d_slam.dir/dataset2.cpp.o
 d_slam: CMakeFiles/d_slam.dir/visual_odometry2.cpp.o
+d_slam: CMakeFiles/d_slam.dir/map2.cpp.o
+d_slam: CMakeFiles/d_slam.dir/frontend2.cpp.o
+d_slam: CMakeFiles/d_slam.dir/backend2.cpp.o
 d_slam: CMakeFiles/d_slam.dir/build.make
 d_slam: /usr/local/lib/libopencv_dnn.so.3.4.6
 d_slam: /usr/local/lib/libopencv_ml.so.3.4.6
@@ -198,7 +243,7 @@ d_slam: /usr/lib/x86_64-linux-gnu/libjpeg.so
 d_slam: /usr/lib/x86_64-linux-gnu/libtiff.so
 d_slam: /usr/lib/x86_64-linux-gnu/libIlmImf.so
 d_slam: CMakeFiles/d_slam.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/davidhan/davidhan_project/d_slambook/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable d_slam"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/davidhan/davidhan_project/d_slambook/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable d_slam"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/d_slam.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

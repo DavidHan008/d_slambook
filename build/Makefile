@@ -973,6 +973,33 @@ sensor_msgs_generate_messages_nodejs/fast:
 	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
 .PHONY : sensor_msgs_generate_messages_nodejs/fast
 
+backend2.o: backend2.cpp.o
+
+.PHONY : backend2.o
+
+# target to build an object file
+backend2.cpp.o:
+	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/backend2.cpp.o
+.PHONY : backend2.cpp.o
+
+backend2.i: backend2.cpp.i
+
+.PHONY : backend2.i
+
+# target to preprocess a source file
+backend2.cpp.i:
+	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/backend2.cpp.i
+.PHONY : backend2.cpp.i
+
+backend2.s: backend2.cpp.s
+
+.PHONY : backend2.s
+
+# target to generate assembly for a file
+backend2.cpp.s:
+	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/backend2.cpp.s
+.PHONY : backend2.cpp.s
+
 camera.o: camera.cpp.o
 
 .PHONY : camera.o
@@ -1243,6 +1270,33 @@ frame2.cpp.s:
 	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/frame2.cpp.s
 .PHONY : frame2.cpp.s
 
+frontend2.o: frontend2.cpp.o
+
+.PHONY : frontend2.o
+
+# target to build an object file
+frontend2.cpp.o:
+	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/frontend2.cpp.o
+.PHONY : frontend2.cpp.o
+
+frontend2.i: frontend2.cpp.i
+
+.PHONY : frontend2.i
+
+# target to preprocess a source file
+frontend2.cpp.i:
+	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/frontend2.cpp.i
+.PHONY : frontend2.cpp.i
+
+frontend2.s: frontend2.cpp.s
+
+.PHONY : frontend2.s
+
+# target to generate assembly for a file
+frontend2.cpp.s:
+	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/frontend2.cpp.s
+.PHONY : frontend2.cpp.s
+
 helloSLAM.o: helloSLAM.cpp.o
 
 .PHONY : helloSLAM.o
@@ -1353,6 +1407,33 @@ lk_dirtect.s: lk_dirtect.cpp.s
 lk_dirtect.cpp.s:
 	$(MAKE) -f CMakeFiles/d_lk_dirtect.dir/build.make CMakeFiles/d_lk_dirtect.dir/lk_dirtect.cpp.s
 .PHONY : lk_dirtect.cpp.s
+
+map2.o: map2.cpp.o
+
+.PHONY : map2.o
+
+# target to build an object file
+map2.cpp.o:
+	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/map2.cpp.o
+.PHONY : map2.cpp.o
+
+map2.i: map2.cpp.i
+
+.PHONY : map2.i
+
+# target to preprocess a source file
+map2.cpp.i:
+	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/map2.cpp.i
+.PHONY : map2.cpp.i
+
+map2.s: map2.cpp.s
+
+.PHONY : map2.s
+
+# target to generate assembly for a file
+map2.cpp.s:
+	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/map2.cpp.s
+.PHONY : map2.cpp.s
 
 useHello.o: useHello.cpp.o
 
@@ -1537,6 +1618,9 @@ help:
 	@echo "... actionlib_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_nodejs"
+	@echo "... backend2.o"
+	@echo "... backend2.i"
+	@echo "... backend2.s"
 	@echo "... camera.o"
 	@echo "... camera.i"
 	@echo "... camera.s"
@@ -1567,6 +1651,9 @@ help:
 	@echo "... frame2.o"
 	@echo "... frame2.i"
 	@echo "... frame2.s"
+	@echo "... frontend2.o"
+	@echo "... frontend2.i"
+	@echo "... frontend2.s"
 	@echo "... helloSLAM.o"
 	@echo "... helloSLAM.i"
 	@echo "... helloSLAM.s"
@@ -1579,6 +1666,9 @@ help:
 	@echo "... lk_dirtect.o"
 	@echo "... lk_dirtect.i"
 	@echo "... lk_dirtect.s"
+	@echo "... map2.o"
+	@echo "... map2.i"
+	@echo "... map2.s"
 	@echo "... useHello.o"
 	@echo "... useHello.i"
 	@echo "... useHello.s"

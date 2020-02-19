@@ -1,6 +1,6 @@
 #pragma once
-#ifndef MYSLAM_FRONTEND_H
-#define MYSLAM_FRONTEND_H
+#ifndef MYSLAM_FRONTEND_H2
+#define MYSLAM_FRONTEND_H2
 
 #include <opencv2/features2d.hpp>
 

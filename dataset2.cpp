@@ -28,7 +28,6 @@ namespace myslam{
     {
         //实例化一个工厂函数
         Frame::Ptr frame_curr= Frame::CreateFrame();//这个工厂函数值得学习的地方
-
         std::stringstream ss;
         ss<<std::setfill('0')<< std::setw(6)<<frame_curr->id_<<".png";//setw设置有总共的数据长度,不够的弥补0
         //然后进行填充成一个6位置,数字
@@ -40,8 +39,8 @@ namespace myslam{
         std::cout<<"image_name:"<<LeftImageFilePath<<std::endl;
         frame_curr->left_img_=cv::imread(LeftImageFilePath);
         frame_curr->right_img_=cv::imread(RightImageFilePath);
-        cv::imshow("image",frame_curr->left_img_);
-        cv::waitKey(0);
+        // cv::imshow("image",frame_curr->left_img_);
+        // cv::waitKey(0);
         return frame_curr;
     }
 }

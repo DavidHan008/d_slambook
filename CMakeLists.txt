@@ -96,6 +96,9 @@ add_executable(d_slam
                     frame2.cpp
                     dataset2.cpp
                     visual_odometry2.cpp
+                    map2.cpp
+                    frontend2.cpp
+                    backend2.cpp
 
  )
 target_link_libraries( d_slam ${OpenCV_LIBS} ${catkin_LIBRARIES} ${Sophus_LIBRARIES} ${LIBS} ${Pangolin_LIBRARIES} )

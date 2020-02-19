@@ -13,8 +13,9 @@ namespace myslam
         dataset_=myslam::Dataset::Ptr(new myslam::Dataset(filePath));
         assert(dataset_->Init()==true);
         // viewer_=new(myslam::Viewer);
-        // frontend_=new(myslam::Frontend);
-        // backend_=new(myslam::Backend);
+        frontend_=myslam::Frontend::Ptr(new myslam::Frontend);
+        backend_=myslam::Backend::Ptr(new myslam::Backend);
+        map_=myslam::Map::Ptr(new myslam::Map);
         return true;
     }
     void VisualOdometry::Run()
@@ -22,16 +23,14 @@ namespace myslam
         while (1)
         {
             //循环提取两帧图像
-            dataset_->NextFrame();
+            Frame::Ptr frame_curr=dataset_->NextFrame();
+            frontend_->AddFrame(frame_curr);
             /* code */
 
         }
         
     }
-    bool VisualOdometry::Step()
-    {
-
-    }
+   
 
 
 

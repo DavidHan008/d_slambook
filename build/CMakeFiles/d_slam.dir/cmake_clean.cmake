@@ -4,6 +4,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/d_slam.dir/frame2.cpp.o"
   "CMakeFiles/d_slam.dir/dataset2.cpp.o"
   "CMakeFiles/d_slam.dir/visual_odometry2.cpp.o"
+  "CMakeFiles/d_slam.dir/map2.cpp.o"
+  "CMakeFiles/d_slam.dir/frontend2.cpp.o"
+  "CMakeFiles/d_slam.dir/backend2.cpp.o"
   "d_slam.pdb"
   "d_slam"
 )

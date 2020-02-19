@@ -4,10 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/davidhan/davidhan_project/d_slambook/backend2.cpp" "/home/davidhan/davidhan_project/d_slambook/build/CMakeFiles/d_slam.dir/backend2.cpp.o"
   "/home/davidhan/davidhan_project/d_slambook/camera2.cpp" "/home/davidhan/davidhan_project/d_slambook/build/CMakeFiles/d_slam.dir/camera2.cpp.o"
   "/home/davidhan/davidhan_project/d_slambook/d_slam_main.cpp" "/home/davidhan/davidhan_project/d_slambook/build/CMakeFiles/d_slam.dir/d_slam_main.cpp.o"
   "/home/davidhan/davidhan_project/d_slambook/dataset2.cpp" "/home/davidhan/davidhan_project/d_slambook/build/CMakeFiles/d_slam.dir/dataset2.cpp.o"
   "/home/davidhan/davidhan_project/d_slambook/frame2.cpp" "/home/davidhan/davidhan_project/d_slambook/build/CMakeFiles/d_slam.dir/frame2.cpp.o"
+  "/home/davidhan/davidhan_project/d_slambook/frontend2.cpp" "/home/davidhan/davidhan_project/d_slambook/build/CMakeFiles/d_slam.dir/frontend2.cpp.o"
+  "/home/davidhan/davidhan_project/d_slambook/map2.cpp" "/home/davidhan/davidhan_project/d_slambook/build/CMakeFiles/d_slam.dir/map2.cpp.o"
   "/home/davidhan/davidhan_project/d_slambook/visual_odometry2.cpp" "/home/davidhan/davidhan_project/d_slambook/build/CMakeFiles/d_slam.dir/visual_odometry2.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
