@@ -416,7 +416,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/d_lk_dirtect.dir/DependInfo.cmake"
-  "CMakeFiles/d_slam.dir/DependInfo.cmake"
   "CMakeFiles/d_ceres_map.dir/DependInfo.cmake"
   "CMakeFiles/d_cv_pose_trans.dir/DependInfo.cmake"
   "CMakeFiles/d_vo.dir/DependInfo.cmake"

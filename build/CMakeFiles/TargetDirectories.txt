@@ -2,7 +2,6 @@
 /home/davidhan/davidhan_project/d_slambook/build/CMakeFiles/list_install_components.dir
 /home/davidhan/davidhan_project/d_slambook/build/CMakeFiles/edit_cache.dir
 /home/davidhan/davidhan_project/d_slambook/build/CMakeFiles/d_lk_dirtect.dir
-/home/davidhan/davidhan_project/d_slambook/build/CMakeFiles/d_slam.dir
 /home/davidhan/davidhan_project/d_slambook/build/CMakeFiles/d_ceres_map.dir
 /home/davidhan/davidhan_project/d_slambook/build/CMakeFiles/d_cv_pose_trans.dir
 /home/davidhan/davidhan_project/d_slambook/build/CMakeFiles/d_vo.dir

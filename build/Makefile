@@ -181,19 +181,6 @@ d_lk_dirtect/fast:
 .PHONY : d_lk_dirtect/fast
 
 #=============================================================================
-# Target rules for targets named d_slam
-
-# Build rule for target.
-d_slam: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 d_slam
-.PHONY : d_slam
-
-# fast build rule for target.
-d_slam/fast:
-	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/build
-.PHONY : d_slam/fast
-
-#=============================================================================
 # Target rules for targets named d_ceres_map
 
 # Build rule for target.
@@ -973,33 +960,6 @@ sensor_msgs_generate_messages_nodejs/fast:
 	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
 .PHONY : sensor_msgs_generate_messages_nodejs/fast
 
-backend2.o: backend2.cpp.o
-
-.PHONY : backend2.o
-
-# target to build an object file
-backend2.cpp.o:
-	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/backend2.cpp.o
-.PHONY : backend2.cpp.o
-
-backend2.i: backend2.cpp.i
-
-.PHONY : backend2.i
-
-# target to preprocess a source file
-backend2.cpp.i:
-	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/backend2.cpp.i
-.PHONY : backend2.cpp.i
-
-backend2.s: backend2.cpp.s
-
-.PHONY : backend2.s
-
-# target to generate assembly for a file
-backend2.cpp.s:
-	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/backend2.cpp.s
-.PHONY : backend2.cpp.s
-
 camera.o: camera.cpp.o
 
 .PHONY : camera.o
@@ -1026,33 +986,6 @@ camera.s: camera.cpp.s
 camera.cpp.s:
 	$(MAKE) -f CMakeFiles/d_vo.dir/build.make CMakeFiles/d_vo.dir/camera.cpp.s
 .PHONY : camera.cpp.s
-
-camera2.o: camera2.cpp.o
-
-.PHONY : camera2.o
-
-# target to build an object file
-camera2.cpp.o:
-	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/camera2.cpp.o
-.PHONY : camera2.cpp.o
-
-camera2.i: camera2.cpp.i
-
-.PHONY : camera2.i
-
-# target to preprocess a source file
-camera2.cpp.i:
-	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/camera2.cpp.i
-.PHONY : camera2.cpp.i
-
-camera2.s: camera2.cpp.s
-
-.PHONY : camera2.s
-
-# target to generate assembly for a file
-camera2.cpp.s:
-	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/camera2.cpp.s
-.PHONY : camera2.cpp.s
 
 ceres_map.o: ceres_map.cpp.o
 
@@ -1135,33 +1068,6 @@ cv_pose_trans.cpp.s:
 	$(MAKE) -f CMakeFiles/d_cv_pose_trans.dir/build.make CMakeFiles/d_cv_pose_trans.dir/cv_pose_trans.cpp.s
 .PHONY : cv_pose_trans.cpp.s
 
-d_slam_main.o: d_slam_main.cpp.o
-
-.PHONY : d_slam_main.o
-
-# target to build an object file
-d_slam_main.cpp.o:
-	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/d_slam_main.cpp.o
-.PHONY : d_slam_main.cpp.o
-
-d_slam_main.i: d_slam_main.cpp.i
-
-.PHONY : d_slam_main.i
-
-# target to preprocess a source file
-d_slam_main.cpp.i:
-	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/d_slam_main.cpp.i
-.PHONY : d_slam_main.cpp.i
-
-d_slam_main.s: d_slam_main.cpp.s
-
-.PHONY : d_slam_main.s
-
-# target to generate assembly for a file
-d_slam_main.cpp.s:
-	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/d_slam_main.cpp.s
-.PHONY : d_slam_main.cpp.s
-
 d_vo_main.o: d_vo_main.cpp.o
 
 .PHONY : d_vo_main.o
@@ -1189,33 +1095,6 @@ d_vo_main.cpp.s:
 	$(MAKE) -f CMakeFiles/d_vo.dir/build.make CMakeFiles/d_vo.dir/d_vo_main.cpp.s
 .PHONY : d_vo_main.cpp.s
 
-dataset2.o: dataset2.cpp.o
-
-.PHONY : dataset2.o
-
-# target to build an object file
-dataset2.cpp.o:
-	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/dataset2.cpp.o
-.PHONY : dataset2.cpp.o
-
-dataset2.i: dataset2.cpp.i
-
-.PHONY : dataset2.i
-
-# target to preprocess a source file
-dataset2.cpp.i:
-	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/dataset2.cpp.i
-.PHONY : dataset2.cpp.i
-
-dataset2.s: dataset2.cpp.s
-
-.PHONY : dataset2.s
-
-# target to generate assembly for a file
-dataset2.cpp.s:
-	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/dataset2.cpp.s
-.PHONY : dataset2.cpp.s
-
 frame.o: frame.cpp.o
 
 .PHONY : frame.o
@@ -1242,60 +1121,6 @@ frame.s: frame.cpp.s
 frame.cpp.s:
 	$(MAKE) -f CMakeFiles/d_vo.dir/build.make CMakeFiles/d_vo.dir/frame.cpp.s
 .PHONY : frame.cpp.s
-
-frame2.o: frame2.cpp.o
-
-.PHONY : frame2.o
-
-# target to build an object file
-frame2.cpp.o:
-	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/frame2.cpp.o
-.PHONY : frame2.cpp.o
-
-frame2.i: frame2.cpp.i
-
-.PHONY : frame2.i
-
-# target to preprocess a source file
-frame2.cpp.i:
-	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/frame2.cpp.i
-.PHONY : frame2.cpp.i
-
-frame2.s: frame2.cpp.s
-
-.PHONY : frame2.s
-
-# target to generate assembly for a file
-frame2.cpp.s:
-	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/frame2.cpp.s
-.PHONY : frame2.cpp.s
-
-frontend2.o: frontend2.cpp.o
-
-.PHONY : frontend2.o
-
-# target to build an object file
-frontend2.cpp.o:
-	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/frontend2.cpp.o
-.PHONY : frontend2.cpp.o
-
-frontend2.i: frontend2.cpp.i
-
-.PHONY : frontend2.i
-
-# target to preprocess a source file
-frontend2.cpp.i:
-	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/frontend2.cpp.i
-.PHONY : frontend2.cpp.i
-
-frontend2.s: frontend2.cpp.s
-
-.PHONY : frontend2.s
-
-# target to generate assembly for a file
-frontend2.cpp.s:
-	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/frontend2.cpp.s
-.PHONY : frontend2.cpp.s
 
 helloSLAM.o: helloSLAM.cpp.o
 
@@ -1408,33 +1233,6 @@ lk_dirtect.cpp.s:
 	$(MAKE) -f CMakeFiles/d_lk_dirtect.dir/build.make CMakeFiles/d_lk_dirtect.dir/lk_dirtect.cpp.s
 .PHONY : lk_dirtect.cpp.s
 
-map2.o: map2.cpp.o
-
-.PHONY : map2.o
-
-# target to build an object file
-map2.cpp.o:
-	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/map2.cpp.o
-.PHONY : map2.cpp.o
-
-map2.i: map2.cpp.i
-
-.PHONY : map2.i
-
-# target to preprocess a source file
-map2.cpp.i:
-	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/map2.cpp.i
-.PHONY : map2.cpp.i
-
-map2.s: map2.cpp.s
-
-.PHONY : map2.s
-
-# target to generate assembly for a file
-map2.cpp.s:
-	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/map2.cpp.s
-.PHONY : map2.cpp.s
-
 useHello.o: useHello.cpp.o
 
 .PHONY : useHello.o
@@ -1516,33 +1314,6 @@ visual_odometry.cpp.s:
 	$(MAKE) -f CMakeFiles/d_vo.dir/build.make CMakeFiles/d_vo.dir/visual_odometry.cpp.s
 .PHONY : visual_odometry.cpp.s
 
-visual_odometry2.o: visual_odometry2.cpp.o
-
-.PHONY : visual_odometry2.o
-
-# target to build an object file
-visual_odometry2.cpp.o:
-	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/visual_odometry2.cpp.o
-.PHONY : visual_odometry2.cpp.o
-
-visual_odometry2.i: visual_odometry2.cpp.i
-
-.PHONY : visual_odometry2.i
-
-# target to preprocess a source file
-visual_odometry2.cpp.i:
-	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/visual_odometry2.cpp.i
-.PHONY : visual_odometry2.cpp.i
-
-visual_odometry2.s: visual_odometry2.cpp.s
-
-.PHONY : visual_odometry2.s
-
-# target to generate assembly for a file
-visual_odometry2.cpp.s:
-	$(MAKE) -f CMakeFiles/d_slam.dir/build.make CMakeFiles/d_slam.dir/visual_odometry2.cpp.s
-.PHONY : visual_odometry2.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1553,7 +1324,6 @@ help:
 	@echo "... list_install_components"
 	@echo "... edit_cache"
 	@echo "... d_lk_dirtect"
-	@echo "... d_slam"
 	@echo "... d_ceres_map"
 	@echo "... d_cv_pose_trans"
 	@echo "... d_vo"
@@ -1618,15 +1388,9 @@ help:
 	@echo "... actionlib_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_nodejs"
-	@echo "... backend2.o"
-	@echo "... backend2.i"
-	@echo "... backend2.s"
 	@echo "... camera.o"
 	@echo "... camera.i"
 	@echo "... camera.s"
-	@echo "... camera2.o"
-	@echo "... camera2.i"
-	@echo "... camera2.s"
 	@echo "... ceres_map.o"
 	@echo "... ceres_map.i"
 	@echo "... ceres_map.s"
@@ -1636,24 +1400,12 @@ help:
 	@echo "... cv_pose_trans.o"
 	@echo "... cv_pose_trans.i"
 	@echo "... cv_pose_trans.s"
-	@echo "... d_slam_main.o"
-	@echo "... d_slam_main.i"
-	@echo "... d_slam_main.s"
 	@echo "... d_vo_main.o"
 	@echo "... d_vo_main.i"
 	@echo "... d_vo_main.s"
-	@echo "... dataset2.o"
-	@echo "... dataset2.i"
-	@echo "... dataset2.s"
 	@echo "... frame.o"
 	@echo "... frame.i"
 	@echo "... frame.s"
-	@echo "... frame2.o"
-	@echo "... frame2.i"
-	@echo "... frame2.s"
-	@echo "... frontend2.o"
-	@echo "... frontend2.i"
-	@echo "... frontend2.s"
 	@echo "... helloSLAM.o"
 	@echo "... helloSLAM.i"
 	@echo "... helloSLAM.s"
@@ -1666,9 +1418,6 @@ help:
 	@echo "... lk_dirtect.o"
 	@echo "... lk_dirtect.i"
 	@echo "... lk_dirtect.s"
-	@echo "... map2.o"
-	@echo "... map2.i"
-	@echo "... map2.s"
 	@echo "... useHello.o"
 	@echo "... useHello.i"
 	@echo "... useHello.s"
@@ -1678,9 +1427,6 @@ help:
 	@echo "... visual_odometry.o"
 	@echo "... visual_odometry.i"
 	@echo "... visual_odometry.s"
-	@echo "... visual_odometry2.o"
-	@echo "... visual_odometry2.i"
-	@echo "... visual_odometry2.s"
 .PHONY : help
 
 

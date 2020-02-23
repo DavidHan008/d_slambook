@@ -6,3 +6,9 @@
 
 #IncludeRegexTransform: 
 
+/home/davidhan/davidhan_project/d_slambook/helloSLAM.cpp
+iostream
+-
+algorithm
+-
+

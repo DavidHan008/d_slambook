@@ -90,15 +90,15 @@ add_executable(d_lk_dirtect lk_dirtect.cpp )
 target_link_libraries( d_lk_dirtect ${OpenCV_LIBS} ${Sophus_LIBRARIES} ${LIBS}  )
 
 
-add_executable(d_slam 
-                    camera2.cpp
-                    d_slam_main.cpp
-                    frame2.cpp
-                    dataset2.cpp
-                    visual_odometry2.cpp
-                    map2.cpp
-                    frontend2.cpp
-                    backend2.cpp
-
- )
-target_link_libraries( d_slam ${OpenCV_LIBS} ${catkin_LIBRARIES} ${Sophus_LIBRARIES} ${LIBS} ${Pangolin_LIBRARIES} )
+#add_executable(d_slam 
+#                    camera2.cpp
+#                    d_slam_main.cpp
+#                    frame2.cpp
+#                    dataset2.cpp
+#                    visual_odometry2.cpp
+#                    map2.cpp
+#                    frontend2.cpp
+#                    backend2.cpp
+#
+# )
+#target_link_libraries( d_slam ${OpenCV_LIBS} ${catkin_LIBRARIES} ${Sophus_LIBRARIES} ${LIBS} ${Pangolin_LIBRARIES} )
