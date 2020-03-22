@@ -506,6 +506,19 @@ rosgraph_msgs_generate_messages_eus/fast:
 .PHONY : rosgraph_msgs_generate_messages_eus/fast
 
 #=============================================================================
+# Target rules for targets named d_voxel_grid
+
+# Build rule for target.
+d_voxel_grid: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 d_voxel_grid
+.PHONY : d_voxel_grid
+
+# fast build rule for target.
+d_voxel_grid/fast:
+	$(MAKE) -f CMakeFiles/d_voxel_grid.dir/build.make CMakeFiles/d_voxel_grid.dir/build
+.PHONY : d_voxel_grid/fast
+
+#=============================================================================
 # Target rules for targets named helloSLAM
 
 # Build rule for target.
@@ -530,6 +543,19 @@ tf_generate_messages_eus: cmake_check_build_system
 tf_generate_messages_eus/fast:
 	$(MAKE) -f CMakeFiles/tf_generate_messages_eus.dir/build.make CMakeFiles/tf_generate_messages_eus.dir/build
 .PHONY : tf_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named d_icp
+
+# Build rule for target.
+d_icp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 d_icp
+.PHONY : d_icp
+
+# fast build rule for target.
+d_icp/fast:
+	$(MAKE) -f CMakeFiles/d_icp.dir/build.make CMakeFiles/d_icp.dir/build
+.PHONY : d_icp/fast
 
 #=============================================================================
 # Target rules for targets named rosgraph_msgs_generate_messages_cpp
@@ -1149,6 +1175,33 @@ helloSLAM.cpp.s:
 	$(MAKE) -f CMakeFiles/helloSLAM.dir/build.make CMakeFiles/helloSLAM.dir/helloSLAM.cpp.s
 .PHONY : helloSLAM.cpp.s
 
+icp_pcl.o: icp_pcl.cpp.o
+
+.PHONY : icp_pcl.o
+
+# target to build an object file
+icp_pcl.cpp.o:
+	$(MAKE) -f CMakeFiles/d_icp.dir/build.make CMakeFiles/d_icp.dir/icp_pcl.cpp.o
+.PHONY : icp_pcl.cpp.o
+
+icp_pcl.i: icp_pcl.cpp.i
+
+.PHONY : icp_pcl.i
+
+# target to preprocess a source file
+icp_pcl.cpp.i:
+	$(MAKE) -f CMakeFiles/d_icp.dir/build.make CMakeFiles/d_icp.dir/icp_pcl.cpp.i
+.PHONY : icp_pcl.cpp.i
+
+icp_pcl.s: icp_pcl.cpp.s
+
+.PHONY : icp_pcl.s
+
+# target to generate assembly for a file
+icp_pcl.cpp.s:
+	$(MAKE) -f CMakeFiles/d_icp.dir/build.make CMakeFiles/d_icp.dir/icp_pcl.cpp.s
+.PHONY : icp_pcl.cpp.s
+
 joint_map.o: joint_map.cpp.o
 
 .PHONY : joint_map.o
@@ -1314,6 +1367,33 @@ visual_odometry.cpp.s:
 	$(MAKE) -f CMakeFiles/d_vo.dir/build.make CMakeFiles/d_vo.dir/visual_odometry.cpp.s
 .PHONY : visual_odometry.cpp.s
 
+voxel_grid.o: voxel_grid.cpp.o
+
+.PHONY : voxel_grid.o
+
+# target to build an object file
+voxel_grid.cpp.o:
+	$(MAKE) -f CMakeFiles/d_voxel_grid.dir/build.make CMakeFiles/d_voxel_grid.dir/voxel_grid.cpp.o
+.PHONY : voxel_grid.cpp.o
+
+voxel_grid.i: voxel_grid.cpp.i
+
+.PHONY : voxel_grid.i
+
+# target to preprocess a source file
+voxel_grid.cpp.i:
+	$(MAKE) -f CMakeFiles/d_voxel_grid.dir/build.make CMakeFiles/d_voxel_grid.dir/voxel_grid.cpp.i
+.PHONY : voxel_grid.cpp.i
+
+voxel_grid.s: voxel_grid.cpp.s
+
+.PHONY : voxel_grid.s
+
+# target to generate assembly for a file
+voxel_grid.cpp.s:
+	$(MAKE) -f CMakeFiles/d_voxel_grid.dir/build.make CMakeFiles/d_voxel_grid.dir/voxel_grid.cpp.s
+.PHONY : voxel_grid.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1351,8 +1431,10 @@ help:
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_eus"
+	@echo "... d_voxel_grid"
 	@echo "... helloSLAM"
 	@echo "... tf_generate_messages_eus"
+	@echo "... d_icp"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... std_msgs_generate_messages_py"
@@ -1409,6 +1491,9 @@ help:
 	@echo "... helloSLAM.o"
 	@echo "... helloSLAM.i"
 	@echo "... helloSLAM.s"
+	@echo "... icp_pcl.o"
+	@echo "... icp_pcl.i"
+	@echo "... icp_pcl.s"
 	@echo "... joint_map.o"
 	@echo "... joint_map.i"
 	@echo "... joint_map.s"
@@ -1427,6 +1512,9 @@ help:
 	@echo "... visual_odometry.o"
 	@echo "... visual_odometry.i"
 	@echo "... visual_odometry.s"
+	@echo "... voxel_grid.o"
+	@echo "... voxel_grid.i"
+	@echo "... voxel_grid.s"
 .PHONY : help
 
 

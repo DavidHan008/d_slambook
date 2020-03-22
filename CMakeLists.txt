@@ -8,7 +8,7 @@ project( HelloSLAM )
 include_directories("/usr/local/include/eigen3")
 find_package( OpenCV 3 REQUIRED )
 include_directories( ${OpenCV_INCLUDE_DIRS} )
-find_package( PCL REQUIRED COMPONENT common io )
+find_package( PCL REQUIRED  )
 include_directories( ${PCL_INCLUDE_DIRS} )
 add_definitions( ${PCL_DEFINITIONS} )
 #find_package(Ceres REQUIRED PATHS "/some/where/local/")
@@ -88,6 +88,12 @@ target_link_libraries( d_ceres_map ${OpenCV_LIBS} ${Sophus_LIBRARIES} ${LIBS}  )
 
 add_executable(d_lk_dirtect lk_dirtect.cpp )
 target_link_libraries( d_lk_dirtect ${OpenCV_LIBS} ${Sophus_LIBRARIES} ${LIBS}  )
+add_executable(d_icp icp_pcl.cpp )
+target_link_libraries(d_icp ${OpenCV_LIBS} ${Sophus_LIBRARIES} ${LIBS} ${PCL_LIBRARIES}  )
+
+add_executable(d_voxel_grid voxel_grid.cpp )
+target_link_libraries(d_voxel_grid ${OpenCV_LIBS} ${Sophus_LIBRARIES} ${LIBS} ${PCL_LIBRARIES}   )
+
 
 
 #add_executable(d_slam 
